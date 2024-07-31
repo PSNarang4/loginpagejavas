@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="location">
+        <label for="uname">Username: </label>
+        <input type="text" name="uname" id="uname"><br><br>
+        
+        <label for="pass">Password: </label>
+        <input type="password" name="pass" id="pass"><br><br>
+        
+        <label>Location: </label>
+        <input type="radio" id="chandigarh" name="location" value="chandigarh">
+        <label for="chandigarh">Chandigarh</label>
+        
+        <input type="radio" id="mohali" name="location" value="mohali">
+        <label for="mohali">Mohali</label>
+        
+        <input type="radio" id="ambala" name="location" value="ambala">
+        <label for="ambala">Ambala</label>
+        
+        <input type="radio" id="other" name="location" value="other">
+        <label for="other">Other</label><br><br>
+        
+        <button type="submit">Submit</button>
+    </form>
+    
+    <script>
+        document.getElementById('location').addEventListener('submit', function(event) {
+            var otherOption = document.getElementById('other');
+            if (otherOption.checked) {
+                alert('Invalid access: other location not allowed');
+                event.preventDefault();
+            } else {
+                alert('Continue');
+            }
+        });
+    </script>
+</body>
+</html>
